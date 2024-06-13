@@ -1,28 +1,102 @@
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    shootDirection = 3
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(img`
-        . . . . . 3 3 . . 3 3 . . . . . 
-        . . . . . 3 3 e e 3 3 . . . . . 
-        . . . . . . . e e . . . . . . . 
-        . . . . . . . e e . . . . . . . 
-        . . . . . . . e e . . . . . . . 
-        . . . . . . . e e . . . . . . . 
-        . . . . . . . e e . . . . . . . 
-        . . . . . . . e e . . . . . . . 
-        . . . . . . . e e . . . . . . . 
-        . . . . . . . e e . . . . . . . 
-        . . . . . . . e e . . . . . . . 
-        . . . . . . f e e f . . . . . . 
-        . . . . . . f f f f . . . . . . 
-        . . . . . . . f f . . . . . . . 
-        . . . . . . . f f . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, Hero, 0, 100)
+    if (shootDirection == 1) {
+        projectile = sprites.createProjectileFromSprite(img`
+            . . . . . 3 3 . . 3 3 . . . . . 
+            . . . . . 3 3 e e 3 3 . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . f e e f . . . . . . 
+            . . . . . . f f f f . . . . . . 
+            . . . . . . . f f . . . . . . . 
+            . . . . . . . f f . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, Hero, 100, 0)
+    } else if (shootDirection == 2) {
+        projectile = sprites.createProjectileFromSprite(img`
+            . . . . . 3 3 . . 3 3 . . . . . 
+            . . . . . 3 3 e e 3 3 . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . f e e f . . . . . . 
+            . . . . . . f f f f . . . . . . 
+            . . . . . . . f f . . . . . . . 
+            . . . . . . . f f . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, Hero, -100, 0)
+    } else if (shootDirection == 3) {
+        projectile = sprites.createProjectileFromSprite(img`
+            . . . . . 3 3 . . 3 3 . . . . . 
+            . . . . . 3 3 e e 3 3 . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . f e e f . . . . . . 
+            . . . . . . f f f f . . . . . . 
+            . . . . . . . f f . . . . . . . 
+            . . . . . . . f f . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, Hero, 0, 100)
+    } else if (shootDirection == 4) {
+        projectile = sprites.createProjectileFromSprite(img`
+            . . . . . 3 3 . . 3 3 . . . . . 
+            . . . . . 3 3 e e 3 3 . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . . e e . . . . . . . 
+            . . . . . . f e e f . . . . . . 
+            . . . . . . f f f f . . . . . . 
+            . . . . . . . f f . . . . . . . 
+            . . . . . . . f f . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, Hero, 0, -100)
+    } else {
+    	
+    }
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    shootDirection = 2
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    shootDirection = 1
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    shootDirection = 4
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprites.destroy(sprite)
     sprites.destroy(otherSprite)
 })
 let projectile: Sprite = null
+let shootDirection = 0
 let Hero: Sprite = null
 scene.setBackgroundColor(7)
 Hero = sprites.create(img`
@@ -62,6 +136,7 @@ let Monster = sprites.create(img`
     . . f b b b b b b c f . . . . . 
     . . . f f f f f f f . . . . . . 
     `, SpriteKind.Enemy)
+shootDirection = 1
 game.onUpdateInterval(1000, function () {
     Monster.setPosition(randint(40, 80), randint(70, 100))
 })
